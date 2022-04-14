@@ -1,0 +1,54 @@
+*,
+*:after,
+*:before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  font-family: "Asap", sans-serif;
+  background-color: #e3ffe6;
+}
+
+.title {
+  font-size: 32px;
+  color: #869686;
+}
+
+.load__title {
+  text-align: center;
+}
+
+.container {
+  max-width: 1450px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+/* .header__inner {
+   display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+} */
+
+.header__title {
+  font-size: 38px;
+  padding: 25px 0;
+}
+
+.header__btn {
+  background-color: #8fff8f;
+}
+
+.main__inner {
+  color: #4f624f;
+}
+
+.main__list {
+  margin: 15px 0;
+  padding: 15px;
+  list-style: none;
+  background-color: #ccffcc;
+}
