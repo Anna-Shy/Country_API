@@ -9,7 +9,8 @@ class App extends React.Component {
       items: [],
       DataisLoaded: false,
     };
-  }
+
+      }
 
   componentDidMount() {
     fetch("https://restcountries.com/v2/all?fields=name,region,area")
@@ -43,13 +44,13 @@ class App extends React.Component {
     });
   };
 
-  desortNameCountry = () => {
+  descsortNameCountry = () => {
     this.setState({
       items: this.state.items.sort((a, b) => b.name.localeCompare(a.name)),
       DataisLoaded: true,
     });
   };
-
+  
   render() {
     const { DataisLoaded, items } = this.state;
 
@@ -64,7 +65,6 @@ class App extends React.Component {
       <div className="app">
         <header>
           <div className="container">
-
             <div className="header__inner">
               <h1 className="header__title title">Country</h1>
 
@@ -80,17 +80,15 @@ class App extends React.Component {
               <button className="header__btn" onClick={this.ascsortNameCountry}>
                 Sort by name asc
               </button>
-              <button className="header__btn" onClick={this.desortNameCountry}>
-                Sort by name des
+              <button className="header__btn" onClick={this.descsortNameCountry}>
+                Sort by name desc
               </button>
             </div>
-            
           </div>
         </header>
 
         <main>
           <div className="container">
-
             <div className="main__inner">
               {items.map((item) => (
                 <ul className="main__list" key={item.id}>
@@ -100,7 +98,6 @@ class App extends React.Component {
                 </ul>
               ))}
             </div>
-
           </div>
         </main>
       </div>
