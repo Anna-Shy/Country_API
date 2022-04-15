@@ -22,6 +22,34 @@ class App extends React.Component {
       });
   }
 
+  smallerCountryFilter = () => {
+    this.setState({
+      items: this.state.items.filter((item) => item.area <= 65300),
+      DataisLoaded: true,
+    });
+  };
+
+  oceaniaFilter = () => {
+    this.setState({
+      items: this.state.items.filter((item) => item.region === "Oceania"),
+      DataisLoaded: true,
+    });
+  };
+
+  ascsortNameCountry = () => {
+    this.setState({
+      items: this.state.items.sort((a, b) => a.name.localeCompare(b.name)),
+      DataisLoaded: true,
+    });
+  };
+
+  desortNameCountry = () => {
+    this.setState({
+      items: this.state.items.sort((a, b) => b.name.localeCompare(a.name)),
+      DataisLoaded: true,
+    });
+  };
+
   render() {
     const { DataisLoaded, items } = this.state;
 
@@ -40,9 +68,21 @@ class App extends React.Component {
             <div className="header__inner">
               <h1 className="header__title title">Country</h1>
 
-              <button className="header__btn">Click me</button>
-              <button className="header__btn">Click me</button>
-              <button className="header__btn">Click me</button>
+              <button
+                className="header__btn"
+                onClick={this.smallerCountryFilter}
+              >
+                Smaller than Lithuania
+              </button>
+              <button className="header__btn" onClick={this.oceaniaFilter}>
+                Oceania region
+              </button>
+              <button className="header__btn" onClick={this.ascsortNameCountry}>
+                Sort by name asc
+              </button>
+              <button className="header__btn" onClick={this.desortNameCountry}>
+                Sort by name des
+              </button>
             </div>
             
           </div>
@@ -56,7 +96,7 @@ class App extends React.Component {
                 <ul className="main__list" key={item.id}>
                   <li>Country: {item.name}</li>
                   <li>Region: {item.region}</li>
-                  <li>Area size: {item.area}</li>
+                  <li>Area size: {item.area ? item.area : (item.area = 0)}</li>
                 </ul>
               ))}
             </div>
