@@ -40,6 +40,14 @@
 
 .header__btn {
   background-color: #8fff8f;
+  padding: 10px 15px;
+  margin: 10px;
+  border-radius: 5px;
+  border: 0;
+}
+
+.header__btn:hover {
+  background-color: #ccffcc;
 }
 
 .main__inner {
